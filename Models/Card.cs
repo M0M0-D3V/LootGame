@@ -6,13 +6,13 @@ namespace LootGame.Models
     public class Card
     {
         public string Type { get; set; }
-        public string Title { get; set; }
+        public string Color { get; set; }
         public int AttackStrength { get; set; }
         public int GoldValue { get; set; }
-        public Card(string type, string title, int atkStr = 0, int gValue = 0)
+        public Card(string type, string color, int atkStr = 0, int gValue = 0)
         {
             Type = type;
-            Title = title;
+            Color = color;
             AttackStrength = atkStr;
             GoldValue = gValue;
         }

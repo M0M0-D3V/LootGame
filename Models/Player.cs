@@ -14,7 +14,7 @@ namespace LootGame.Models
         public int TotalGold { get; set; }
         public int Action { get; set; }
 
-        // [] Players Cards will be in 1 of 4 stacks: CardsInHand, InPlay(onMerchantShip), Captured, or DiscardPile
+        // [] Players Cards will be in 1 of 4 lists: CardsInHand, InPlay(onMerchantShip), Captured, or DiscardPile
         public List<Card> CardsInHand { get; set; }
         public List<Card> InPlay { get; set; }
         public List<Card> Captured { get; set; }

@@ -25,8 +25,15 @@ namespace LootGame.Models
             // blaaaa
             // CREATE ALL THE STARTING CARDS HERE
             // IMAGINE MANY MANY LOOPS AND BASIC INSTANTIATION
+            cards = new List<Card>();
+            string type = "";
+            string color = "";
+            int atkStr = 0;
+            int goldValue = 0;
+            Card oneCard = new Card(type, color, atkStr, goldValue);
+            cards.Add(oneCard);
         }
-        // [] DrawPile has Shuffle method that randomly reorders all the cards
+        // [x] DrawPile has Shuffle method that randomly reorders all the cards
         public void Shuffle()
         {
             // Fisher Yates Shuffle
