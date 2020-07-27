@@ -8,5 +8,12 @@ namespace LootGame.Models
         // Object of the game is to be the Player with highest TotalGold when the DrawPile is empty and one Player is out of cards
         // FIELDS AND PROPERTIES FOR THE GAME DEFINED
 
+        public Game()
+        { }
+
+        public Game(bool NewGame = true)
+        {
+            // stuff for new game setting up here
+        }
     }
 }

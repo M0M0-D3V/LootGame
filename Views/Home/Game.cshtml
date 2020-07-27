@@ -1,0 +1,96 @@
+@model Game
+
+@* @{
+    Player CurrentPlayer = Model.Players[Model.PlayerTurn];
+    var CPDiscardPile = CurrentPlayer.DiscardPile.ToList();
+}
+
+@{
+    ViewData["Title"] = @CurrentPlayer.Name + "'s Turn!";
+} *@
+
+
+<body class="bg-secondary">
+<div class="row"><div class="col">
+
+    @* Player Info*@
+    <div class="row">
+        <div class="col-md-6 text-center mb-2">
+            <div class="border border-dark d-inline-block p-3 bg-dark rounded">
+                @* <h3 class="mt-0 mb-0 text-white"> Player: @CurrentPlayer.Name, VP: @CurrentPlayer.TotalVP</h3> *@
+            </div>
+        </div>
+        @* Current Player Turn Stats *@
+        <div class="col-md-6 text-center mb-2">
+            <div class="border border-dark d-inline-block p-3 bg-dark rounded">
+                @* <h3 class="mt-0 mb-0 text-white"> Actions: @CurrentPlayer.Actions, Buys: @CurrentPlayer.Buys, Treasure Total: @CurrentPlayer.TreasureValueTotal</h3> *@
+            </div>
+        </div>
+    </div>
+
+    @* Field *@
+    <div class="row">
+
+        @* Field Cards *@
+        <div class="col-md-8 text-center ml-5">
+            
+            @* Treasure & Victory Cards *@
+            <div class="row">
+                <partial name="_FieldBasicCardsPartial" />
+            </div>
+            
+            @* Action Cards *@
+            <div class="row">
+                <partial name="_FieldActionCardsPartial" />
+            </div>
+        </div>
+
+        @* InPlay *@
+        <div class="col-md-3"  style="border: 2px solid black">
+            @* <h4>@CurrentPlayer.InPlay.Count Cards played this turn</h4> *@
+            @* @for (int i = 0; i < CurrentPlayer.InPlay.Count; i++)
+            {
+                Card card = CurrentPlayer.InPlay[i];
+                <div class="d-inline-block">
+                    <img style="width: 70px" src="~/images/Dominion@(card.Title).png" alt="@(card.Title)">
+                </div>
+            } *@
+        </div>
+    </div>
+
+    @* Player Discard, Deck, and Hand *@
+    <div class="row mt-4 ml-5">
+        <partial name="_PlayerCardsPartial" />
+    </div>
+
+    @* Command Buttons *@
+    <div class="row mt-4 ml-5">
+        @* Play All Treasures Button *@
+        @* @{
+            int TreasureCardCount = 0;
+            foreach (var Card in CurrentPlayer.Hand)
+            {
+                if (Card.Type == "Treasure")
+                {
+                    TreasureCardCount++;
+                }
+            }
+            if (TreasureCardCount > 0)
+            {
+                <form asp-controller="Home" asp-action="PlayAllTreasures" method="POST">
+                    <button class="btn btn-warning mx-3">Play All Treasures</button>
+                </form>
+            }
+        } *@
+        @* End Turn Button *@
+        <form asp-controller="Home" asp-action="EndTurn" method="POST">
+            <button class="btn btn-warning">End Turn</button>
+        </form>
+    </div> 
+    
+    @* Ragequit Button *@
+    <div class="d-flex justify-content-end">
+        <a class="btn btn-danger text-center mr-3" asp-controller="Home" asp-action="GameComplete">End Game</a>
+    </div>
+</div></div>
+</body>

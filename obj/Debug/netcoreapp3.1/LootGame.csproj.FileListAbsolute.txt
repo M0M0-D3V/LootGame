@@ -58,3 +58,5 @@ D:\OneDrive\Momo's Folder\m0m0-d3vProjects\LootGame\obj\Debug\netcoreapp3.1\Loot
 D:\OneDrive\Momo's Folder\m0m0-d3vProjects\LootGame\obj\Debug\netcoreapp3.1\LootGame.csproj.CopyComplete
 D:\OneDrive\Momo's Folder\m0m0-d3vProjects\LootGame\obj\Debug\netcoreapp3.1\LootGame.dll
 D:\OneDrive\Momo's Folder\m0m0-d3vProjects\LootGame\obj\Debug\netcoreapp3.1\LootGame.pdb
+D:\OneDrive\Momo's Folder\m0m0-d3vProjects\LootGame\obj\Debug\netcoreapp3.1\Razor\Views\Home\Game.cshtml.g.cs
+D:\OneDrive\Momo's Folder\m0m0-d3vProjects\LootGame\obj\Debug\netcoreapp3.1\Razor\Views\Home\GameComplete.cshtml.g.cs

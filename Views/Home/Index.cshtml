@@ -2,11 +2,20 @@
     ViewData["Title"] = "Loot Game";
 }
 
+<body class="bg-dark d-flex align-items-center justify-content-center">
+    <div class="d-flex mt-5 align-items-center justify-content-center box-cover-bg">
+        <div class="div-glow">
 <div class="jumbotron text-center">
     <h1 class="display-4">Loot Game</h1>
     <h5>The Plundering Pirate Card Game</h5>
     <h5>2-8 players - ages 10 & up</h5>
     <hr/>
-<button class="btn btn-lg btn-outline-success btn-block" href="#">START</button><br/>
-<button class="btn btn-lg btn-outline-success btn-block" href="#">HOW TO PLAY</button>
+@* <button class="btn btn-lg btn-outline-success btn-block" href="#">START</button><br/> *@
+@* <button class="btn btn-lg btn-outline-success btn-block" href="#">HOW TO PLAY</button> *@
+            <form asp-controller="Home" asp-action="NewGame" method="POST">
+                <button class="btn start-game-btn p-3">START A GAME</button>
+            </form>
 </div>
+        </div>
+    </div>
+</body>

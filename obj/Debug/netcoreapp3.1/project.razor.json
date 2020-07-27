@@ -20526,6 +20526,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\OneDrive\\Momo's Folder\\m0m0-d3vProjects\\LootGame\\Views\\Home\\Game.cshtml",
+      "TargetPath": "Views\\Home\\Game.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\OneDrive\\Momo's Folder\\m0m0-d3vProjects\\LootGame\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
@@ -20548,6 +20553,11 @@
     {
       "FilePath": "d:\\OneDrive\\Momo's Folder\\m0m0-d3vProjects\\LootGame\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\OneDrive\\Momo's Folder\\m0m0-d3vProjects\\LootGame\\Views\\Home\\GameComplete.cshtml",
+      "TargetPath": "Views\\Home\\GameComplete.cshtml",
       "FileKind": "mvc"
     },
     {
