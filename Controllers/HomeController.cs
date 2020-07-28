@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using LootGame.Models;
+using Microsoft.EntityFrameworkCore;
+using LootGame.Helpers;
+
 
 namespace LootGame.Controllers
 {
@@ -37,7 +40,8 @@ namespace LootGame.Controllers
         {
             Game currentGame = GetGameFromSession();
             // save game to session
-            // HttpContext.Session.SetObjectAsJson("currentGame", currentGame);
+            HttpContext.Session.SetObjectAsJson("currentGame", currentGame);
+            // SessionHelper.SetObjectAsJson(HttpContext.Session, "currentGame", currentGame);
             //  if game is over, redirect game finished screen
             // if (currentGame.GameFinished())
             // {
@@ -49,16 +53,16 @@ namespace LootGame.Controllers
         public Game GetGameFromSession()
         {
             Game currentGame = null;
-            // if (HttpContext.Session.GetObjectFromJson<Game>("currentGame") == null)
-            // {
-            // create new game
-            currentGame = new Game(NewGame: true);
-            // All (2) players are dealt cards
-            // }
-            // else
-            // {
-            //     currentGame = HttpContext.Session.GetObjectFromJson<Game>("currentGame");
-            // }
+            if (HttpContext.Session.GetObjectFromJson<Game>("currentGame") == null)
+            {
+                // create new game
+                currentGame = new Game(NewGame: true);
+                // All (2) players are dealt cards
+            }
+            else
+            {
+                currentGame = HttpContext.Session.GetObjectFromJson<Game>("currentGame");
+            }
             return currentGame;
         }
         public IActionResult Privacy()

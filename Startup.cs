@@ -28,7 +28,8 @@ namespace LootGame
                 options.Cookie.IsEssential = true;
             });
             services.AddControllersWithViews()
-            .AddSessionStateTempDataProvider();
+            .AddSessionStateTempDataProvider()
+            .AddNewtonsoftJson();
             services.AddDbContext<DataContext>();
             services.AddRazorPages()
             .AddSessionStateTempDataProvider();
